@@ -3,7 +3,7 @@
 Plot SM and EFT predictions from Combine workspaces, with optional
 two-dimensional likelihood contours.
 
-- `plot_pth_eft.py`: evaluate two Wilson coefficients and produce
+- `plot_eft_spectra.py`: evaluate two Wilson coefficients and produce
   rate-only, shape-only, and rate-plus-shape plots.
 - `plot_eft_scan_inset.py`: plot the exported spectra with scan contours
   and matching benchmark markers.
@@ -25,7 +25,7 @@ Contours default to the asymptotic joint 95% CL threshold for two parameters:
 
 ### Sensitivity in decay: chwb
 
-	python3 plot_pth_eft.py /eos/user/c/csammora/CMSSW_14_1_0_pre4/src/FiducialXSFWK/datacard/hzz4l_all_13TeV_xs_mZ2_SMEFTsim_bin_v3.root \
+	python3 plot_eft_spectra.py /eos/user/c/csammora/CMSSW_14_1_0_pre4/src/FiducialXSFWK/datacard/hzz4l_all_13TeV_xs_mZ2_SMEFTsim_bin_v3.root \
 	  --coefficients chwb chwbtil \
 	  --pairs='1.2,1.8;1.2,-1.8;0.8,0;0,1.15' \
 	  --cms-label "Simulation Work in progress" \
@@ -34,7 +34,7 @@ Contours default to the asymptotic joint 95% CL threshold for two parameters:
 	  --quantity density \
 	  --observable massZ2
 
-	python3 plot_pth_eft.py /eos/user/c/csammora/CMSSW_14_1_0_pre4/src/FiducialXSFWK/datacard/hzz4l_all_13TeV_xs_pTH_SMEFTsim_bin_v3.root \
+	python3 plot_eft_spectra.py /eos/user/c/csammora/CMSSW_14_1_0_pre4/src/FiducialXSFWK/datacard/hzz4l_all_13TeV_xs_pTH_SMEFTsim_bin_v3.root \
 	  --coefficients chwb chwbtil \
 	  --pairs='1.2,1.8;1.2,-1.8;0.8,0;0,1.15' \
 	  --cms-label "Simulation Work in progress" \
@@ -56,7 +56,7 @@ Contours default to the asymptotic joint 95% CL threshold for two parameters:
 
 ### Sensitivity in production: chg
 
-	python3 plot_pth_eft.py /eos/user/c/csammora/CMSSW_14_1_0_pre4/src/FiducialXSFWK/datacard/hzz4l_all_13TeV_xs_mZ2_SMEFTsim_bin_v3.root \
+	python3 plot_eft_spectra.py /eos/user/c/csammora/CMSSW_14_1_0_pre4/src/FiducialXSFWK/datacard/hzz4l_all_13TeV_xs_mZ2_SMEFTsim_bin_v3.root \
 	  --coefficients chg chgtil \
 	  --pairs='-0.145,0;-0.070,0.063;-0.070,-0.063;0.006,0' \
 	  --cms-label "Simulation Work in progress" \
@@ -65,7 +65,7 @@ Contours default to the asymptotic joint 95% CL threshold for two parameters:
 	  --quantity density \
 	  --observable massZ2
 
-	python3 plot_pth_eft.py /eos/user/c/csammora/CMSSW_14_1_0_pre4/src/FiducialXSFWK/datacard/hzz4l_all_13TeV_xs_pTH_SMEFTsim_bin_v3.root \
+	python3 plot_eft_spectra.py /eos/user/c/csammora/CMSSW_14_1_0_pre4/src/FiducialXSFWK/datacard/hzz4l_all_13TeV_xs_pTH_SMEFTsim_bin_v3.root \
 	  --coefficients chg chgtil \
 	  --pairs='-0.145,0;-0.070,0.063;-0.070,-0.063;0.006,0' \
 	  --cms-label "Simulation Work in progress" \

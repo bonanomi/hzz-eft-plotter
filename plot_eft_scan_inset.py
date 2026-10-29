@@ -184,6 +184,20 @@ def main():
     p.add_argument('--cms-label',default='Simulation Work in progress');p.add_argument('--rlabel',default='13.6 TeV')
     p.add_argument('--outdir',default='eft_scan_inset')
     a=p.parse_args()
+    if a.overflow_width is None:
+        with open(a.spectra, newline="") as f:
+            rows = list(csv.DictReader(f))
+
+        overflow_widths = {
+            float(r["bin_width"])
+            for r in rows
+            if r["group"] == "SM"
+            and math.isinf(float(r["bin_high"]))
+            and r.get("bin_width")
+        }
+
+        if len(overflow_widths) == 1:
+            a.overflow_width = overflow_widths.pop()
     if a.coefficients[0]==a.coefficients[1]: p.error('Choose two distinct coefficients')
     a.coefficient_labels=a.coefficient_labels or a.coefficients
     if a.pairs is None:
